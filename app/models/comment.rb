@@ -2,6 +2,8 @@ class Comment
   include DataMapper::Resource
 #  include DataMapper::Reflection
 
+  property :id, Serial
+
   property :body,           Text
   property :created_at,     DateTime
   property :author_name,    Text

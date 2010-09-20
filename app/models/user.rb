@@ -1,11 +1,13 @@
 require 'digest/sha1'
-require File.join(File.dirname(__FILE__), '..', '..', "lib", "authenticated_system", "authenticated_dependencies") rescue nil
+#require File.join(File.dirname(__FILE__), '..', '..', "lib", "authenticated_system", "authenticated_dependencies") rescue nil
 
 class User
   include DataMapper::Resource
-  include AuthenticatedSystem::Model
+  #include AuthenticatedSystem::Model
 
   attr_accessor :password, :password_confirmation
+
+  property :id, Serial
 
   property :login,                      String
   property :email,                      String

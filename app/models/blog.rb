@@ -1,10 +1,11 @@
-#require 'redcloth'
-#require 'syntaxi'
+require 'redcloth'
+require 'syntaxi'
 
 class Blog
   include DataMapper::Resource
 
 #  include DataMapper::Reflection
+  property :id, Serial
 
   property :title,        String
   property :path_title,   String

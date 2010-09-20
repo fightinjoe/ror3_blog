@@ -1,5 +1,7 @@
 class Tester
   include DataMapper::Resource
+  property :id, Serial
+
   property :name, String
 
   before :save,   :return_false

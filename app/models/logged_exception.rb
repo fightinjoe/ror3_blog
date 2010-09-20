@@ -3,6 +3,8 @@ class LoggedException
   include DataMapper::Resource
   include DataMapperExt
 
+  property :id, Serial
+
   property :exception_class, String
   property :controller_name, String
   property :action_name,     String
