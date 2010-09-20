@@ -2,7 +2,8 @@ defaults: &defaults
   adapter: sqlite
 
 development:
-  database: fightinjoe_development.db
+  database: db/dev.sqlite3
+  path: db/dev.sqlite3
   <<: *defaults
 
   # Add more repositories
@@ -17,8 +18,10 @@ development:
   #     ...
 
 test:
-  database: fightinjoe_test.db
+  database: db/test.sqlite3
+  path: db/test.sqlite3
   <<: *defaults
 production:
-  database: fightinjoe_production.db
+  database: db/prod.sqlite3
+  path: db/prod.sqlite3
   <<: *defaults
