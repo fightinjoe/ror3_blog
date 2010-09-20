@@ -1,7 +1,8 @@
-class Category < DataMapper::Base
+class Category
+  include DataMapper::Resource
 #  include DataMapper::Reflection
 
-  property :title, :string
+  property :title, String
 
-  has_many :blogs
+  has n, :blogs
 end

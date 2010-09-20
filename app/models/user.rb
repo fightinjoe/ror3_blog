@@ -1,20 +1,21 @@
 require 'digest/sha1'
 require File.join(File.dirname(__FILE__), '..', '..', "lib", "authenticated_system", "authenticated_dependencies") rescue nil
 
-class User < DataMapper::Base
+class User
+  include DataMapper::Resource
   include AuthenticatedSystem::Model
-  
+
   attr_accessor :password, :password_confirmation
-  
-  property :login,                      :string
-  property :email,                      :string
-  property :crypted_password,           :string
-  property :salt,                       :string
-  property :remember_token_expires_at,  :datetime
-  property :remember_token,             :string
-  property :created_at,                 :datetime
-  property :updated_at,                 :datetime
-  
+
+  property :login,                      String
+  property :email,                      String
+  property :crypted_password,           String
+  property :salt,                       String
+  property :remember_token_expires_at,  DateTime
+  property :remember_token,             String
+  property :created_at,                 DateTime
+  property :updated_at,                 DateTime
+
   validates_length_of         :login,                   :within => 3..40
   validates_uniqueness_of     :login
   validates_presence_of       :email
@@ -25,14 +26,11 @@ class User < DataMapper::Base
   validates_presence_of       :password_confirmation,   :if => proc {password_required?}
   validates_length_of         :password,                :within => 4..40, :if => proc {password_required?}
   validates_confirmation_of   :password,                :groups => :create
-    
-  before_save :encrypt_password
-  
+
+  before :save, :encrypt_password
+
   def login=(value)
     @login = value.downcase unless value.nil?
   end
-    
 
-
-  
 end

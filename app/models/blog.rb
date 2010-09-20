@@ -1,35 +1,37 @@
-require 'redcloth'
-require 'syntaxi'
+#require 'redcloth'
+#require 'syntaxi'
 
-class Blog < DataMapper::Base
+class Blog
+  include DataMapper::Resource
+
 #  include DataMapper::Reflection
 
-  property :title,        :string
-  property :path_title,   :string
-  property :body,         :text
-  property :body_html,    :text,    :lazy => false, :writer => :private
-  property :created_at,   :datetime
-  property :updated_at,   :datetime
-  property :published_at, :datetime
-  property :year,         :integer
-  property :month,        :integer
-  property :permalink,    :text
-  property :comments_expire_at, :datetime #, :reflect => :parse_date
+  property :title,        String
+  property :path_title,   String
+  property :body,         Text
+  property :body_html,    Text,    :lazy => false, :writer => :private
+  property :created_at,   DateTime
+  property :updated_at,   DateTime
+  property :published_at, DateTime
+  property :year,         Integer
+  property :month,        Integer
+  property :permalink,    Text
+  property :comments_expire_at, DateTime #, :reflect => :parse_date
 
   belongs_to :user
   belongs_to :category
-  has_many   :comments
+  has n,     :comments
 
   validates_presence_of :title
 
-  before_create :set_path_title
-  before_create :set_year
-  before_create :set_month
-  before_save   :normalize_category_id
+  before :create, :set_path_title
+  before :create, :set_year
+  before :create, :set_month
+  before :save,   :normalize_category_id
 
   # The before_save filter doesn't seem to work for update
-  before_create :cache_body_html
-  before_update :cache_body_html
+  before :create, :cache_body_html
+  before :update, :cache_body_html
 
   class << self
     def last( opts ) first( default_options.merge(opts).merge( :conditions => ['published_at IS NOT NULL'] ) ); end
