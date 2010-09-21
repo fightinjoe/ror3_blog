@@ -1,14 +1,16 @@
 require 'redcloth'
 
-class Blogs < Application
-  include Merb::CommentsHelper
-  cache_pages :index, :show
+class BlogsController < ApplicationController
+  #include Merb::CommentsHelper
+  include CommentsHelper
+
+#  cache_pages :index, :show
 
   def index
-    provides :rss
-    if params[:format] == 'rss'
-      @blogs = Blog.get_rss
-    else
+    #provides :rss
+    #if params[:format] == 'rss'
+    #  @blogs = Blog.get_rss
+    #else
       title     = params[:category_title]
       @category = title && Category.first( :title => title )
 
@@ -16,7 +18,7 @@ class Blogs < Application
 
       options = { :category_id => (@category ? @category.id : nil), :category_id.not => @about.id }
       @blogs  = Blog.paginate( options ).page( params[:page] )
-    end
+    #end
 
     render
   end

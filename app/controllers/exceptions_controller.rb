@@ -1,4 +1,4 @@
-class Exceptions < Application
+class ExceptionsController < ApplicationController
   
   # handle NotFound exceptions (404)
   def not_found

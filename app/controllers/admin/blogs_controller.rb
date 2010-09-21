@@ -1,8 +1,8 @@
 module Admin
-class Blogs < Application
-  before :find_blog,      :only    => %w(show edit destroy)
-  before :login_required
-  before :configure_layout
+class BlogsController < ApplicationController
+  before_filter :find_blog,      :only    => %w(show edit destroy)
+  before_filter :authenticate_user!
+  before_filter :configure_layout
 
   def index
     options = { :category_id => @category ? @category.id : nil, :per_page => 25, :all => true }
@@ -11,13 +11,11 @@ class Blogs < Application
   end
 
   def new
-    only_provides :html
     @blog = Blog.new
     render
   end
 
   def edit
-    only_provides :html
     render
   end
 

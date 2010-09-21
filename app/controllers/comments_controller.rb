@@ -1,6 +1,6 @@
-class Comments < Application
-  provides :html, :rss
-  before :login_required, :exclude => %w(new create)
+class CommentsController < ApplicationController
+  #provides :html, :rss
+  before_filter :login_required, :exclude => %w(new create)
 
   def index
     @comments = Comment.all( :order => 'created_at DESC', :limit => 30 )

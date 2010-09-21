@@ -1,6 +1,32 @@
 Fightinjoe::Application.routes.draw do
   devise_for :users
 
+  # RESTful routes
+  resources :blog do
+#      b.resources :comments
+  end
+
+  namespace :admin do
+    resources :blogs
+  end
+
+  resources :comment
+
+  #r.match(%r{/(\d+)/(\d+)/([a-zA-Z\-]+)}).to(
+  #  :controller => 'blogs', :action => 'show', :year => "[1]", :month => "[2]", :path_title => "[3]"
+  #)
+
+  # NAMED routes
+  match '/contact' => 'contact', :controller => 'comments', :action => 'new'
+
+  match '/:category_title' => 'category' , :controller => 'blogs', :action => 'index', :as => 'category'
+
+  # Used for path generation
+  match '/:year/:month/:path_title' => 'blog#by_date', :controller => 'blogs', :action => 'show'
+
+  # Change this for your home page to be available at /
+  root :to => 'blogs#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +76,7 @@ Fightinjoe::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "home#index"
+  # root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

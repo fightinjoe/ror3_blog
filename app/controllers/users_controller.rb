@@ -1,8 +1,8 @@
 require File.join(File.dirname(__FILE__), '..', '..', "lib", "authenticated_system", "authenticated_dependencies")
-class Users < Application
-  provides :xml
+class UsersController < ApplicationController
+  #provides :xml
   
-  before :login_required
+  before_filter :login_required
   
   def new
     only_provides :html

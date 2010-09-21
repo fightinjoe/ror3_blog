@@ -89,6 +89,10 @@ GEM
       abstract (>= 1.0.0)
     extlib (0.9.15)
     fastercsv (1.5.3)
+    haml (3.0.18)
+    hoe (2.6.2)
+      rake (>= 0.8.7)
+      rubyforge (>= 2.0.4)
     i18n (0.4.1)
     json_pure (1.4.6)
     mail (2.2.6.1)
@@ -96,6 +100,8 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    paginator (1.1.1)
+      hoe (>= 1.6.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -120,6 +126,8 @@ GEM
       rspec-expectations (= 2.0.0.beta.22)
     rspec-rails (2.0.0.beta.22)
       rspec (= 2.0.0.beta.22)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
     stringex (1.1.0)
     syntax (1.0.0)
     syntaxi (0.5.0)
@@ -151,6 +159,8 @@ DEPENDENCIES
   dm-transactions (~> 1.0.2)
   dm-types (~> 1.0.2)
   dm-validations (~> 1.0.2)
+  haml
+  paginator
   railties (~> 3.0.0)
   rspec-rails (~> 2.0.0.beta.19)
   syntaxi

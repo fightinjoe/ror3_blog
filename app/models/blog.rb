@@ -76,18 +76,14 @@ class Blog
     end
 
     private
-      def default_options() { :order => 'published_at DESC' }; end
+      def default_options() { :order => [:published_at.desc] }; end
 
       def count_for( all, category_id = nil )
-        conditions = category_id ? ['category_id = ?'] : [true]
-        parameters = category_id ? [ category_id ]     : []
+        conditions = {}
+        conditions[:category_id]      = category_id if category_id
+        conditions[:published_at.not] = nil         unless all
 
-        unless all
-          conditions << 'published_at IS NOT NULL'
-        end
-
-        conditions = [ conditions.join(' AND '), *parameters ].compact
-        Blog.count( :conditions => conditions )
+        Blog.count( conditions )
       end
   end
 

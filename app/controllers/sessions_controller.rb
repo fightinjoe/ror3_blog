@@ -1,6 +1,6 @@
 # require  'lib/authenticated_system_controller'
 require File.join(File.dirname(__FILE__), '..', '..', "lib", "authenticated_system", "authenticated_dependencies")
-class Sessions < Application
+class SessionsController < ApplicationController
 #  skip_before :login_required
 
   def new

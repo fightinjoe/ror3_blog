@@ -1,0 +1,90 @@
+/*
+Syntax error: Undefined variable: "$green1".
+        on line 34 of /Users/awheeler/Sites/2010/fightinjoe.ror3/public/stylesheets/sass/common.sass
+
+29: #flash
+30:   :padding 0.5em
+31:   :text-align center
+32:   &.notice
+33:     :border 2px solid Green
+34:     :background = !green1
+35: 
+36: .error
+37:   :border 1px solid Red
+38: 
+39: .errors
+
+Backtrace:
+/Users/awheeler/Sites/2010/fightinjoe.ror3/public/stylesheets/sass/common.sass:34
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/script/variable.rb:39:in `_perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/script/node.rb:61:in `perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/prop_node.rb:132:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `block in perform_children'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `map'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `perform_children'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:317:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/rule_node.rb:191:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `block in perform_children'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `map'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `perform_children'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:317:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/rule_node.rb:191:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `block in perform_children'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `map'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:326:in `perform_children'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:317:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/root_node.rb:59:in `perform!'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:305:in `_perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/node.rb:213:in `perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/root_node.rb:37:in `perform'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/tree/root_node.rb:29:in `render'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:220:in `update_stylesheet'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:85:in `block (2 levels) in update_stylesheets'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:78:in `each'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:78:in `block in update_stylesheets'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:76:in `each'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:76:in `update_stylesheets'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin.rb:50:in `check_for_updates'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/haml-3.0.18/lib/sass/plugin/rack.rb:40:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/warden-0.10.7/lib/warden/manager.rb:35:in `block in call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/warden-0.10.7/lib/warden/manager.rb:34:in `catch'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/warden-0.10.7/lib/warden/manager.rb:34:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/cookies.rb:287:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.0/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:168:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/application.rb:77:in `method_missing'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/railties-3.0.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Users/awheeler/.rvm/gems/ruby-1.9.2-p0/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/Users/awheeler/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/awheeler/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/awheeler/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Undefined variable: \"$green1\".\A         on line 34 of /Users/awheeler/Sites/2010/fightinjoe.ror3/public/stylesheets/sass/common.sass\A \A 29: #flash\A 30:   :padding 0.5em\A 31:   :text-align center\A 32:   &.notice\A 33:     :border 2px solid Green\A 34:     :background = !green1\A 35: \A 36: .error\A 37:   :border 1px solid Red\A 38: \A 39: .errors"; }

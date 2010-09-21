@@ -35,9 +35,12 @@ gem 'dm-aggregates',        DM_VERSION
 gem 'dm-timestamps',        DM_VERSION
 gem 'dm-observer',          DM_VERSION
 
+# System requirements
 gem 'RedCloth'
 gem 'syntaxi'
 gem 'dm-devise'
+gem 'haml'
+gem 'paginator'
 
 group(:development, :test) do
 
