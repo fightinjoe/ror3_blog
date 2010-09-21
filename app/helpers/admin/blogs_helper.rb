@@ -1,7 +1,5 @@
-module Merb
 module Admin
-module BlogsHelper
+  module BlogsHelper
 
-end
+  end
 end # Admin
-end

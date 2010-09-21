@@ -1,5 +1,3 @@
-module Merb
-    module SidebarPartHelper
+module SidebarPartHelper
 
-    end
 end
