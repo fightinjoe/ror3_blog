@@ -57,7 +57,7 @@ class BlogsController < ApplicationController
     @blog = Blog.first(params[:id])
     raise NotFound unless @blog
     if @blog.destroy!
-      redirect url(:blogs)
+      redirect_to :action => :index
     else
       raise BadRequest
     end
