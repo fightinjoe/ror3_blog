@@ -15,8 +15,12 @@ module ApplicationHelper
     date.strftime('<div class="date"><span class="month">%b</span><span class="day">%d</span></div>')
   end
 
-  def blog_by_date_url( blog )
-    url(:controller => '')
+  def url_blog_by_date( blog )
+    blog_by_date_url(
+      :year       => blog.year,
+      :month      => blog.month,
+      :path_title => blog.path_title
+    )
   end
 
   def pluralize( count, word )

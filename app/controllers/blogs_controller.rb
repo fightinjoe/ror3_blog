@@ -16,7 +16,7 @@ class BlogsController < ApplicationController
 
       raise NotFound if title && @category.nil?
 
-      options = { :category_id => (@category ? @category.id : nil), :category_id.not => @about.id }
+      options = { :category_id => (@category ? @category.id : nil), :category_id.not => Category.about.id }
       @blogs  = Blog.paginate( options ).page( params[:page] )
     #end
 
@@ -30,16 +30,23 @@ class BlogsController < ApplicationController
     render
   end
 
+  def latest
+    @blog = Blog.last( :category_id.not => Category.about.id )
+    @category = @blog.category
+    @comment  = Comment.new( :blog_id => @blog.id )
+    render :show
+  end
+
   private
 
     def find_blog
       id, page_title, month, year = params[:id], params[:path_title], params[:month], params[:year]
-      if id == 'latest'
-        @about = Category.first(:title => 'About')
-        @blog  = Blog.last( :category_id.not => (@about ? @about.id : -1) )
-      else
+      #if id == 'latest'
+      #  @about = Category.first(:title => 'About')
+      #  @blog  = Blog.last( :category_id.not => (@about ? @about.id : -1) )
+      #else
         @blog = id ? Blog.first( id ) : Blog.first( :path_title => page_title, :year => year, :month => month )
-      end
+      #end
       raise NotFound unless @blog
     end
 end

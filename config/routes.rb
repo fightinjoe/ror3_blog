@@ -22,10 +22,10 @@ Fightinjoe::Application.routes.draw do
   match '/:category_title' => 'category' , :controller => 'blogs', :action => 'index', :as => 'category'
 
   # Used for path generation
-  match '/:year/:month/:path_title' => 'blog#by_date', :controller => 'blogs', :action => 'show'
+  match '/:year/:month/:path_title' => 'blog#by_date', :controller => 'blogs', :action => 'show', :as => 'blog_by_date'
 
   # Change this for your home page to be available at /
-  root :to => 'blogs#index'
+  root :to => 'blogs#latest'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

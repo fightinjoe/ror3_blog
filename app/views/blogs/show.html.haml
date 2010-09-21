@@ -1,6 +1,6 @@
 %h2= @blog.title
 %small= @blog.published_at.strftime( '%A, %d %B %Y') if @blog.published_at
 
-= @blog.body_html
+!= @blog.body_html
 
 = render( :partial => 'comments/index', :locals => {:blog => @blog} )

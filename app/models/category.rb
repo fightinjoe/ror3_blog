@@ -7,4 +7,9 @@ class Category
   property :title, String
 
   has n, :blogs
+
+  def self.about
+    Category.first_or_create(:title => 'About')
+  end
+
 end
