@@ -37,6 +37,7 @@ gem 'dm-observer',          DM_VERSION
 
 gem 'RedCloth'
 gem 'syntaxi'
+gem 'dm-devise'
 
 group(:development, :test) do
 

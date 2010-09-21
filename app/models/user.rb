@@ -3,11 +3,18 @@ require 'digest/sha1'
 
 class User
   include DataMapper::Resource
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable, :lockable and :timeoutable
+  # :recoverable, :validatable
+  devise :database_authenticatable, :registerable, :rememberable, :trackable
+
   #include AuthenticatedSystem::Model
 
+  property :id, Serial
+
+=begin
   attr_accessor :password, :password_confirmation
 
-  property :id, Serial
 
   property :login,                      String
   property :email,                      String
@@ -34,5 +41,6 @@ class User
   def login=(value)
     @login = value.downcase unless value.nil?
   end
+=end
 
 end
