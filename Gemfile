@@ -9,7 +9,6 @@ gem 'actionmailer',       RAILS_VERSION, :require => 'action_mailer'
 gem 'railties',           RAILS_VERSION, :require => 'rails'
 
 gem 'dm-rails',          '~> 1.0.3'
-gem 'dm-sqlite-adapter', DM_VERSION
 
 # You can use any of the other available database adapters.
 # This is only a small excerpt of the list of all available adapters
@@ -43,10 +42,11 @@ gem 'haml'
 gem 'paginator'
 
 group(:development, :test) do
+  gem 'dm-sqlite-adapter', DM_VERSION
 
   # Uncomment this if you want to use rspec for testing your application
 
-gem 'rspec-rails', '~> 2.0.0.beta.19'
+  gem 'rspec-rails', '~> 2.0.0.beta.19'
 
   # To get a detailed overview about what queries get issued and how long they take
   # have a look at rails_metrics. Once you bundled it, you can run
@@ -64,3 +64,6 @@ gem 'rspec-rails', '~> 2.0.0.beta.19'
 
 end
 
+group(:production) do
+  gem 'dm-postgres-adapter',  DM_VERSION
+end
