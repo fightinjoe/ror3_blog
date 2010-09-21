@@ -2,7 +2,7 @@ Fightinjoe::Application.routes.draw do
   devise_for :users
 
   # RESTful routes
-  resources :blog do
+  resources :blogs do
 #      b.resources :comments
   end
 
@@ -10,7 +10,7 @@ Fightinjoe::Application.routes.draw do
     resources :blogs
   end
 
-  resources :comment
+  resources :comments
 
   #r.match(%r{/(\d+)/(\d+)/([a-zA-Z\-]+)}).to(
   #  :controller => 'blogs', :action => 'show', :year => "[1]", :month => "[2]", :path_title => "[3]"
