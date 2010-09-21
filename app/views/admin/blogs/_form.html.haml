@@ -3,8 +3,8 @@
   # Parameters:
   #  blog - blog object to edit or optionally create
 
-//- action = blog.new_record? ? new_admin_blog_url : edit_admin_blog_url(:id => blog.id)
-- form_for( blog ) do |f|
+- url = blog.new_record? ? admin_blogs_url : edit_admin_blog_url(:id => blog.id)
+- form_for( blog, :url => url ) do |f|
   - unless blog.new_record?
     %input{ :name => '_method', :type => 'hidden', :value => "put" }
 
@@ -16,7 +16,7 @@
     - collection = Category.all.unshift( Category.new ).push( Category.new( :title => '-- Add a new Category --' ) )
     - onclick  = "if(this.value == ''){var title=prompt('What is the name of your new category?');"
     - onclick += "o=this.options[this.selectedIndex];o.value=title;o.innerHTML=title;}"
-    %dd= f.collection_select( :category_id, collection, 'id', 'title', :onclick => onclick, :selected => blog.category_id )
+    %dd= f.collection_select( :category_id, collection, 'id', 'title', {:selected => blog.category_id}, {:onchange => onclick} )
 
     %dt
       %label{ :for => 'blog_publish' } Published?

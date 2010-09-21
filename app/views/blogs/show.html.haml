@@ -3,4 +3,4 @@
 
 = @blog.body_html
 
-= partial( 'comments/index', :blog => @blog )
+= render( :partial => 'comments/index', :locals => {:blog => @blog} )
