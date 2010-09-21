@@ -8,9 +8,9 @@ class BlogsController < ApplicationController
 
   def index
     #provides :rss
-    #if params[:format] == 'rss'
-    #  @blogs = Blog.get_rss
-    #else
+    if params[:format] == 'rss'
+      @blogs = Blog.get_rss
+    else
       title     = params[:category_title]
       @category = title && Category.first( :title => title )
 
@@ -18,9 +18,15 @@ class BlogsController < ApplicationController
 
       options = { :category_id => (@category ? @category.id : nil), :category_id.not => Category.about.id }
       @blogs  = Blog.paginate( options ).page( params[:page] )
-    #end
+    end
 
-    render
+    respond_to do |format|
+      format.html
+      format.rss {
+        response.headers["Content-Type"] = "application/xml; charset=utf-8"
+        render
+      }
+    end
   end
 
   def show
