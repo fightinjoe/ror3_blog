@@ -3,7 +3,7 @@ Fightinjoe::Application.routes.draw do
 
   # RESTful routes
   resources :blogs do
-#      b.resources :comments
+    resources :comments
   end
 
   namespace :admin do

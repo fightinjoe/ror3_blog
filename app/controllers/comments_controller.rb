@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   #provides :html, :rss
-  before_filter :login_required, :exclude => %w(new create)
+  before_filter :authenticate_user!, :exclude => %w(new create)
 
   def index
     @comments = Comment.all( :order => 'created_at DESC', :limit => 30 )
@@ -9,21 +9,21 @@ class CommentsController < ApplicationController
   end
 
   def show
-    only_provides :html
+    #only_provides :html
     @comment = Comment.first(params[:id])
     raise NotFound unless @comment
     display @comment
   end
 
   def new
-    provides :js
+    #provides :js
     @blog = params[:blog_id] ? Blog.get( params[:blog_id] ) : nil
     @comment = Comment.new( :blog_id => params[:blog_id] )
     render
   end
 
   def edit
-    only_provides :html
+    #only_provides :html
     @comment = Comment.first(params[:id])
     raise NotFound unless @comment
     render
