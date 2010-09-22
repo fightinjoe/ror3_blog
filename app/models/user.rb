@@ -6,7 +6,9 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   # :recoverable, :validatable
-  devise :database_authenticatable, :registerable, :rememberable, :trackable
+
+  # Add :registerable in order to allow new users to signup
+  devise :database_authenticatable, :rememberable, :trackable
 
   #include AuthenticatedSystem::Model
 
