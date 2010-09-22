@@ -43,6 +43,7 @@ gem 'paginator'
 
 group(:development, :test) do
   gem 'dm-sqlite-adapter', DM_VERSION
+  gem 'ruby-debug19',      :require => 'ruby-debug'
 
   # Uncomment this if you want to use rspec for testing your application
 
