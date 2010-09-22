@@ -14,7 +14,7 @@
   %tbody
     - for blog in @blogs
       %tr
-        %td{ :width => '50px' }!=  print_date( blog.created_at )
+        %td{ :width => '50px' }!=  print_date( blog.created_at )   if blog.created_at
         %td{ :width => '50px' }!=  print_date( blog.published_at ) if blog.published_at
         %td{ :width => '100px' }
           = (cat = blog.category) ? link_to( cat.title, category_url(:category_title => cat.title) ) : nil
