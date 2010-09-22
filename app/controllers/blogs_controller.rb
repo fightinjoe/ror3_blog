@@ -4,6 +4,8 @@ class BlogsController < ApplicationController
   #include Merb::CommentsHelper
   include CommentsHelper
 
+  before_filter :http_cache, :only => [:index, :show]
+
 #  cache_pages :index, :show
 
   def index
@@ -55,4 +57,11 @@ class BlogsController < ApplicationController
       #end
       raise NotFound unless @blog
     end
+
+    # Utilize Heroku's HTTP cache, Varnish
+    # http://docs.heroku.com/http-caching
+    def http_cache
+      response.headers['Cache-Control'] = 'public, max-age=300'
+    end
+
 end
