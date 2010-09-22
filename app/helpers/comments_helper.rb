@@ -8,13 +8,15 @@ module CommentsHelper
   end
 
   def comment_actions( comment )
-    email   = '<a href="mailto:%s">Email</a>' % comment.author_email if logged_in? && comment.author_email
+    email   = '<a href="mailto:%s">Email</a>' % comment.author_email if user_signed_in? && comment.author_email
     confirm = "return confirm('Are you certain you want to delete this comment?');"
-    delete  = delete_button(
-      :blog_comment, comment, 'Delete',
-      {:style   => 'display:inline;'},
-      {:onclick => confirm, :style => 'font-size:.8em' }
-    )
+    delete  = button_to('Delete', { :controller => 'comments', :action => 'destroy', :id => comment.id },
+                                  { :method => :delete, :onclick => confirm })
+    #delete  = delete_button(
+    #  :blog_comment, comment, 'Delete',
+    #  {:style   => 'display:inline;'},
+    #  {:onclick => confirm, :style => 'font-size:.8em' }
+    #)
     [ email, delete ].join(' - ')
   end
 end

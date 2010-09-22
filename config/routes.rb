@@ -17,12 +17,12 @@ Fightinjoe::Application.routes.draw do
   #)
 
   # NAMED routes
-  match '/contact' => 'contact', :controller => 'comments', :action => 'new'
+  match '/contact' => 'comments#new', :controller => 'comments', :action => 'new'
 
   match '/:category_title' => 'category' , :controller => 'blogs', :action => 'index', :as => 'category'
 
   # Used for path generation
-  match '/:year/:month/:path_title' => 'blog#by_date', :controller => 'blogs', :action => 'show', :as => 'blog_by_date'
+  match '/:year/:month/:path_title' => 'blogs#show', :as => 'blog_by_date'
 
   # Change this for your home page to be available at /
   root :to => 'blogs#latest'

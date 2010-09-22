@@ -18,7 +18,7 @@
         #header
         #content
           = yield
-        //= part( GenericPart => :sidebar, :category => @category ) unless @hide_sidebar
+        = render(:partial => 'layouts/sidebar') # part( GenericPart => :sidebar, :category => @category ) unless @hide_sidebar
         #footer
 
     // %script{ :src => "http://www.google-analytics.com/urchin.js", :type => "text/javascript" }
